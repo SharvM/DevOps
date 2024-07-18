@@ -1,4 +1,4 @@
 print("Welcome to stage 2.")
-name = str(input("Please provide your name: "))
+name = "John"
 
 print(f"Hello {name}!")
