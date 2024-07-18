@@ -22,8 +22,8 @@ jobs:
       - name: Run main.py
         run: python main.py
         
-      - name: Run Stage1.py
-        run: python Stage1.py
+      - name: Run stage1.py
+        run: python stage1.py
         
-      - name: Run Stage2.py
-        run: python Stage2.py
+      - name: Run stage2.py
+        run: python stage2.py
