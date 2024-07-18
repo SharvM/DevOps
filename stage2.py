@@ -1,4 +1,5 @@
 print("Welcome to stage 2.")
-name = "John"
+first_name = "John"
+last_name = "Doe"
 
-print(f"Hello {name}!")
+print(f"Hello {first_name} {last_name}!")
