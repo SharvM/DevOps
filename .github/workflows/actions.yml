@@ -21,10 +21,12 @@ jobs:
 
       - name: Run main.py
         id: run_main
-        run: python main.py
+        run: |
+          python main.py
+          echo "main_status=$STATUS" >> $GITHUB_ENV
 
       - name: Run stage1.py and stage2.py if main.py succeeds
-        if: ${{ steps.run_main.outputs.success == 'true' }}
+        if: ${{ env.main_status == 0 }}
         run: |
           python stage1.py
           python stage2.py
