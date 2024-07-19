@@ -13,19 +13,25 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-
+          
       - name: Install Python packages
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run main.py
-        run: python main.py
-        
-      - name: Run stage1.py
-        run: python stage1.py
-        
-      - name: Run stage2.py
+        run: |
+          python main.py
+          echo "main_status=$MAINSTATUS" >> $GITHUB_ENV
+
+      - name: Run stage1.py if main.py success
+        if: ${{ env.main_status == 0 }}
+        run: |
+          python stage1.py
+          echo "stage1_status=$STAGE1STATUS" >> $GITHUB_ENV
+
+      - name: Run stage2.py if stage1.py success
+        if: ${{ env.stage1_status == 0 }}
         run: python stage2.py
 
 
