@@ -11,13 +11,7 @@ jobs:
 
       - name: Create a directory
         run: mkdir downloads
-
-      - name: List files recursively
-        run: |
-          echo "Listing all files recursively:"
-          ls -R downloads
       
-
       - name: Add artifact
         run: |
             cd downloads
@@ -29,6 +23,11 @@ jobs:
         with:
           name: files
           path: downloads
+
+      - name: List files recursively
+        run: |
+          echo "Listing all files recursively:"
+          ls -R downloads
 
 
 
