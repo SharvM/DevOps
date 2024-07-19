@@ -20,7 +20,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run main.py
-        id: run_main
         run: |
           python main.py
           echo "main_status=$MAINSTATUS" >> $GITHUB_ENV
