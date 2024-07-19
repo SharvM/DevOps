@@ -1,0 +1,28 @@
+name: Github Actions Artifact Practice
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository content
+        run: mkdir downloads
+
+      - name: Add artifact
+        run: |
+            cd downloads
+            echo "This is a file." > hello.txt
+            cd ..
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: files
+          path: downloads
+
+
+
+
+
+
