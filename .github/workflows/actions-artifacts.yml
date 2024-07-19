@@ -7,7 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository content
+        uses: actions/checkout@v3
+
+      - name: Create a directory
         run: mkdir downloads
+
+      - name: List files recursively
+        run: |
+          echo "Listing all files recursively:"
+          ls -R downloads
+      
 
       - name: Add artifact
         run: |
