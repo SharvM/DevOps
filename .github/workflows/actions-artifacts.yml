@@ -29,6 +29,18 @@ jobs:
           echo "Listing all files recursively:"
           ls -R downloads
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: files
+          path: artifact
+      - name: Display structure of download files
+        run: ls -R artifact
+
 
 
 
