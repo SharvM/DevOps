@@ -45,6 +45,9 @@ jobs:
       - name: Display structure of download files
         run: ls -R artifact
 
+      - name: Print contents
+        run: cat artifact
+
 
 
 
