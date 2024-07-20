@@ -46,7 +46,7 @@ jobs:
         run: ls -R artifact
 
       - name: Print contents
-        run: cat artifact
+        run: cat artifact/hello.txt
 
 
 
